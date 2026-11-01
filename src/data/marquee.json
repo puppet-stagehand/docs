@@ -1,12 +1,47 @@
 {
   "schema_version": 1,
-  "generated_at": null,
+  "generated_at": "2026-11-01T13:04:38Z",
   "feed": "oci://ghcr.io/puppet-stagehand/catalog",
-  "index_digest": null,
+  "index_digest": "sha256:c24de1f5fe6d133795c0ef0ceba90b13fa747eed31b0fd2c00f0523ef1cfddb6",
   "publisher_key": {
     "fingerprint": "sha256:48ba24e6f91da7ced7540b1512d0eac37b7fa070d474d28b9f8a89a0c5955242",
     "pem": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERzD9kZTJx2uOrQdybFiHNxagf+Ie\nW1NVUaOwcNILUpQmRMKbLVtmPrqAgvJygWS5KCnuaiSiiaoTWlNI1KP9vw==\n-----END PUBLIC KEY-----\n"
   },
-  "packs": [],
+  "packs": [
+    {
+      "id": "code_manager",
+      "name": "Advanced Code Manager",
+      "summary": "Stage control-repo changes, write them back to git as a pull request, and deploy Puppet code to each estate, with approval where it matters.",
+      "publisher": "Puppet by Perforce",
+      "tier": "adv",
+      "entitlement": "licence_key",
+      "licence": "proprietary",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "released_at": "2026-10-19",
+          "image": "ghcr.io/puppet-stagehand/packs/code_manager@sha256:995d611df7c0c09437da21080cf3b57f86cde95fd2a75889b4a608b19868e32b",
+          "digest": "sha256:995d611df7c0c09437da21080cf3b57f86cde95fd2a75889b4a608b19868e32b"
+        }
+      ]
+    },
+    {
+      "id": "puppet_observability",
+      "name": "Puppet Observability",
+      "summary": "Fleet-wide change attribution and PDCTNG dashboards in the console, from Puppet Data Connector.",
+      "publisher": "Puppet by Perforce",
+      "tier": "core",
+      "entitlement": "none",
+      "licence": "proprietary",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "released_at": "2026-10-09",
+          "image": "ghcr.io/puppet-stagehand/packs/puppet_observability@sha256:c65e78f0e05116e903263d7be4ecd749a69a98f01cce4229e3ee0665e467a2e5",
+          "digest": "sha256:c65e78f0e05116e903263d7be4ecd749a69a98f01cce4229e3ee0665e467a2e5"
+        }
+      ]
+    }
+  ],
   "paid_listings": []
 }
