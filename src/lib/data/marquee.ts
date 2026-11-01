@@ -21,8 +21,10 @@ const schemaPath = sourceDataPath(
 );
 
 // Test-only data sets, selected by an exact fixture name (never a free-form path), mirroring the
-// compatibility register's fixture flags. They are used to build the page against hostile text.
+// compatibility register's fixture flags. They cover empty and hostile listing states without
+// depending on what the signed production catalog currently publishes.
 const fixtureDataPaths: Record<string, string> = {
+  empty: resolve(process.cwd(), 'tests/fixtures/data/marquee-empty.json'),
   hostile: resolve(process.cwd(), 'tests/fixtures/data/marquee-hostile-text.json'),
   valid: resolve(process.cwd(), 'tests/fixtures/data/marquee-valid.json'),
 };

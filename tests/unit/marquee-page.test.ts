@@ -3,6 +3,7 @@ import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import type { MarqueeDocument } from '../../src/lib/data/types';
 
 const astroBin = join(process.cwd(), 'node_modules/astro/bin/astro.mjs');
 const roots: string[] = [];
@@ -80,11 +81,34 @@ describe('Marquee page with packs and a paid listing', () => {
 describe('Marquee page with nothing published', () => {
   let html = '';
   beforeAll(() => {
-    html = buildMarqueePage(undefined);
+    html = buildMarqueePage('empty');
   }, 120_000);
 
   it('shows the empty state and no table', () => {
     expectIncludes(html, 'No Expansion Packs are published on Marquee yet.');
     expectExcludes(html, '<table');
+  });
+});
+
+describe('Marquee page with the committed listing', () => {
+  let html = '';
+  beforeAll(() => {
+    html = buildMarqueePage(undefined);
+  }, 120_000);
+
+  it('renders the published pack rows and digests without assuming the catalog is empty', () => {
+    const document = JSON.parse(
+      readFileSync(join(process.cwd(), 'src/data/marquee.json'), 'utf8'),
+    ) as MarqueeDocument;
+
+    expect((html.match(/<tr[^>]*data-pack-id=/g) ?? []).length).toBe(document.packs.length);
+    expect((html.match(/<li[^>]*data-paid-id=/g) ?? []).length).toBe(document.paid_listings.length);
+    for (const pack of document.packs) {
+      for (const version of pack.versions) {
+        expectIncludes(html, `<code>${version.digest}</code>`);
+      }
+    }
+    expectIncludes(html, document.publisher_key.fingerprint);
+    expectIncludes(html, document.feed);
   });
 });

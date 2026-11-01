@@ -41,11 +41,18 @@ describe('loadMarquee', () => {
     expect(document.paid_listings[0].label).toBe('Perforce add-on, licence required');
   });
 
-  it('seeds the committed document with nothing published, the pinned fingerprint and the feed address', () => {
-    const document = loadMarquee();
+  it('loads a valid empty listing independently of the published catalog', () => {
+    const document = loadMarquee({ path: fixture('marquee-empty.json') });
 
     expect(document.packs).toEqual([]);
     expect(document.paid_listings).toEqual([]);
+    expect(document.generated_at).toBeNull();
+    expect(document.index_digest).toBeNull();
+  });
+
+  it('validates the committed document and keeps the pinned fingerprint and feed address', () => {
+    const document = loadMarquee();
+
     expect(document.publisher_key.fingerprint).toBe(fingerprint);
     expect(document.feed).toBe('oci://ghcr.io/puppet-stagehand/catalog');
   });
