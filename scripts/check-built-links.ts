@@ -4,10 +4,10 @@ import { parse, type DefaultTreeAdapterTypes } from 'parse5';
 import { loadCompatibility } from '../src/lib/data/compatibility';
 
 const allowedNonClaimLinks = new Set([
-  'https://github.com/puppet-stagehand/stagehand-docs',
-  'https://github.com/puppet-stagehand/stagehand-docs/issues',
-  'https://github.com/puppet-stagehand/stagehand-docs/issues/new',
-  'https://github.com/puppet-stagehand/stagehand-docs/security/advisories/new',
+  'https://github.com/puppet-stagehand/docs',
+  'https://github.com/puppet-stagehand/docs/issues',
+  'https://github.com/puppet-stagehand/docs/issues/new',
+  'https://github.com/puppet-stagehand/docs/security/advisories/new',
   'https://github.com/puppetlabs/stagehand-release/issues',
   'https://github.com/puppetlabs/stagehand-release/releases',
   'https://help.puppet.com/bolt/current/topics/bolt_installing.htm',

@@ -12,11 +12,11 @@ Install these supported tool versions:
 - npm 11
 - OpenTofu 1.12 (needed only for infrastructure checks)
 
-Clone `puppet-stagehand/stagehand-docs`, then run:
+Clone `puppet-stagehand/docs`, then run:
 
 ```sh
-git clone https://github.com/puppet-stagehand/stagehand-docs.git
-cd stagehand-docs
+git clone https://github.com/puppet-stagehand/docs.git
+cd docs
 npm ci
 npm run verify
 ```

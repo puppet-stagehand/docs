@@ -17,9 +17,9 @@ Route your issue to one of two boundaries, depending on what you're reporting.
 
 Use the Stagehand Docs issue tracker for non-sensitive documentation errors, broken public links, and reproducible defects that can be discussed in public.
 
-- [Browse the stagehand-docs repository](https://github.com/puppet-stagehand/stagehand-docs)
-- [Review existing public issues](https://github.com/puppet-stagehand/stagehand-docs/issues)
-- [Open a public issue](https://github.com/puppet-stagehand/stagehand-docs/issues/new)
+- [Browse the Stagehand docs repository](https://github.com/puppet-stagehand/docs)
+- [Review existing public issues](https://github.com/puppet-stagehand/docs/issues)
+- [Open a public issue](https://github.com/puppet-stagehand/docs/issues/new)
 
 Never include credentials, customer data, private diagnostics, or suspected vulnerabilities in a public issue.
 
